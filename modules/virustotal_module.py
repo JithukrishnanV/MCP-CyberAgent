@@ -58,7 +58,7 @@ def get_hashes_from_ps1():
             return []
 
         output = result.stdout.strip()
-        print(output)
+        
         return output.split(",") if output else []
     except Exception as e:
         return [f"🚫 Error: {str(e)}"]
