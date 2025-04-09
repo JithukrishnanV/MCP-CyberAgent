@@ -38,5 +38,5 @@ $newHashes = foreach ($hash in $currentHashes) {
 # STEP 5: Output new hashes as CSV string (for Python)
 $newHashesString = $newHashes -join ","
 #hash for demp
-$newHashesString = "105c607308d533b85db17a2d5cdf775244f4d2682250fa9bbaa993f847eaef4c"
+#$newHashesString = "105c607308d533b85db17a2d5cdf775244f4d2682250fa9bbaa993f847eaef4c"
 Write-Output $newHashesString
