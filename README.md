@@ -1,14 +1,11 @@
-
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://choosealicense.com/licenses/mit/)
-
 
 ![mcp_cyberagent_banner](https://github.com/JithukrishnanV/j/blob/master/pics/Logo.png)
 
 # MCP-CyberAgent 🛡️
 MCP-CyberAgent is an **MCP-compliant AI security assistant** that connects Claude Desktop (or any MCP client) with real-world cybersecurity tools like **VirusTotal, Nmap, Shodan**, and **PowerShell**.
 
-🔬 In this project, I’ve integrated automated hash extraction from running startup applications —— enabling Claude to act like a personalized 
+🔬 In this project, I’ve integrated automated hash extraction from running startup applications — enabling Claude to act like a personalized  
 **AI-powered Malware Scanner**.
 
 It supports natural language interaction to:
@@ -17,7 +14,7 @@ It supports natural language interaction to:
 - Gather threat intelligence from Shodan
 - Test network health and connectivity
 
-All this runs **locally** in your environment — no cloud integration required.
+All this runs **locally** in your environment — no cloud integration required. And it's completely free.
 
 ---
 
@@ -30,19 +27,20 @@ https://github.com/user-attachments/assets/469d2800-8c06-461f-8336-6a1751b851cc
 ## ⚙️ Tools & Prompts
 
 ### 🔬 VirusTotal Integration
-Claude scans the hashes of startup applications and compares them with VirusTotal.
+Using PowerShell, MCP-CyberAgent extracts SHA256 hashes from startup applications and checks them against **VirusTotal’s threat database**.
 
-> 🧠 Prompt:  
-> `"Scan running processes with VirusTotal"`
+> 🧠 Try asking Claude:  
+> `"Scan running processes with VirusTotal"`  
+> `"Check for malware in startup applications"`
 
 ![virustotal_demo](https://github.com/JithukrishnanV/j/blob/master/pics/VirusTotal.png)
 
 ---
 
 ### 🌐 Nmap Port Scanner
-Scan open ports, services, and protocols from any IP using Claude.
+Scan open ports, services, and protocols on any IP using Claude.
 
-> 🧠 Prompt:  
+> 🧠 Try:  
 > `"Check what ports are open on 127.0.0.1"`
 
 ![nmap_demo](https://github.com/JithukrishnanV/j/blob/master/pics/Nmap1.png)
@@ -50,9 +48,9 @@ Scan open ports, services, and protocols from any IP using Claude.
 ---
 
 ### 🌍 Shodan IP Intelligence
-Get real-time information on exposed services for any public IP.
+Get real-time internet-facing service information for any public IP address using Shodan.
 
-> 🧠 Prompt:  
+> 🧠 Try:  
 > `"What does Shodan know about 1.1.1.1?"`
 
 ![shodan_demo](https://github.com/JithukrishnanV/j/blob/master/pics/Shodan.png)
@@ -60,23 +58,26 @@ Get real-time information on exposed services for any public IP.
 ---
 
 ### 🌐 Get Public IP
-Query your external/public IP address instantly.
+Query your external/public IP address.
 
-> 🧠 Prompt:  
+> 🧠 Try:  
 > `"What is my IP?"`
 
 ![MyIp_demo](https://github.com/JithukrishnanV/j/blob/master/pics/MyIp.png)
 
 ---
-### 🏓 Ping Checker
-Use Claude to test latency and host availability using ICMP.
 
-> 🧠 Prompt:  
+### 🏓 Ping Checker
+Test latency and host reachability via ICMP.
+
+> 🧠 Try:  
 > `"Ping 8.8.8.8"`  
 > `"Check if google.com is online"`
 
+![ping_demo](https://github.com/JithukrishnanV/j/blob/master/pics/Ping.png)
+
 ---
-![ping_demo](https://github.com/JithukrishnanV/j/blob/master/pics/Ping.png).
+
 ## ✅ Requirements
 
 - Python 3.10+
@@ -85,9 +86,11 @@ Use Claude to test latency and host availability using ICMP.
 - API Keys:
   - [VirusTotal](https://virustotal.com)
   - [Shodan](https://shodan.io) (free key is enough)
-- Installed tools:
-  ```bash
-  pip install -r requirements.txt
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
 
 
 
