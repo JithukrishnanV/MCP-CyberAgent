@@ -20,14 +20,17 @@ $currentHashes = foreach ($line in $applicationList) {
         (Get-FileHash -Path $line -Algorithm SHA256).Hash
     }
 }
+# Get the directory of the current script
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-# STEP 3: Load default hash baseline (optional)
-$defaultHashes = Get-Content -Path "Default-hash.txt" -ErrorAction SilentlyContinue
+# Construct the full path to the hash filec
+$hashFilePath = Join-Path $scriptDir "Default-hash.txt"
 
-if (-Not $defaultHashes) {
-    $defaultHashes = $currentHashes
-}
+# Load the hash file
+$defaultHashes = Get-Content -Path $hashFilePath -ErrorAction SilentlyContinue
 
+
+#Write-Output $defaultHashes
 # STEP 4: Filter for only *new/unmatched* hashes
 $newHashes = foreach ($hash in $currentHashes) {
     if (-Not ($hash -in $defaultHashes)) {
