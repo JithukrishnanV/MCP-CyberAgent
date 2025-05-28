@@ -3,3 +3,4 @@ python-dotenv
 mcp==1.5.0
 python-nmap
 ping3
+shodan
